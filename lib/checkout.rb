@@ -2,7 +2,7 @@ class Checkout
 	attr_reader :items
 
 	def initialize(*rules)
-		@rules = rules
+		@rules = rules.sort_by{|r| r.order}
 	end
 
 	def scan(item)
@@ -14,7 +14,12 @@ class Checkout
 	end
 
 	def total
-	    discount = @rules.inject(0){|sum, rule| sum + rule.discount_for(self) }
+		running_total = subtotal
+	    discount = @rules.inject(0) do |sum, rule| 
+	    	item_discount = rule.discount_for(self, running_total)
+	    	running_total = subtotal - item_discount 
+	    	sum + item_discount
+	    end
 	    (subtotal - discount).round(2)
     end
 end
