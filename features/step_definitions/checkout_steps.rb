@@ -9,9 +9,9 @@ def map_ids_to_products(product_ids)
 end
 
 def checkout_with_rules
-  	rule1 = PercentageDiscount.new({:limit => 60, :percentage => 10})
-  	rule2 = BulkDiscount.new({:pid => '001', :minimum => 2, :item_discount => 0.75})
-  	Checkout.new(rule1, rule2)
+  rule1 = PercentageDiscount.new({:limit => 60, :percentage => 10})
+  rule2 = BulkDiscount.new({:pid => '001', :minimum => 2, :item_discount => 0.75})
+  Checkout.new(rule1, rule2)
 end
 
 Given(/I have data/) do |table|
@@ -21,9 +21,9 @@ end
 
 When(/I have a checkout with products/) do |table|
 	product_ids = table.raw[0]
-  	@checkout = checkout_with_rules
-  	products = map_ids_to_products product_ids
-  	products.each {|p| @checkout.scan p}
+  @checkout = checkout_with_rules
+  products = map_ids_to_products product_ids
+  products.each {|p| @checkout.scan p}
 end
 
 Then(/the total price is ([\d\.]+)/) do |total|

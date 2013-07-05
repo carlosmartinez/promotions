@@ -1,10 +1,10 @@
 Feature: Discount engine
 	Background:
     	Given I have data
-			|	Product code 	| Name 						| Price		|
-			|	001 			| Travel Card Holder 		| 9.25		|
-			|	002 			| Personalised cufflinks 	| 45.00		|
-			|	003 			| Kids T-shirt 				| 19.95		|
+			|	Product code 	| Name 										| Price		|
+			|	001 					| Travel Card Holder 			| 9.25		|
+			|	002 					| Personalised cufflinks 	| 45.00		|
+			|	003 					|	Kids T-shirt 						| 19.95		|
 		
  	Scenario: test case 1
 		When I have a checkout with products 

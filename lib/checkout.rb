@@ -15,11 +15,11 @@ class Checkout
 
 	def total
 		running_total = subtotal
-	    discount = @rules.inject(0) do |sum, rule| 
-	    	item_discount = rule.discount_for(self, running_total)
-	    	running_total = running_total - item_discount 
-	    	sum + item_discount
-	    end
-	    (subtotal - discount).round(2)
-    end
+		discount = @rules.inject(0) do |sum, rule| 
+			item_discount = rule.discount_for(self, running_total)
+			running_total = running_total - item_discount 
+			sum + item_discount
+		end
+		(subtotal - discount).round(2)
+	end
 end

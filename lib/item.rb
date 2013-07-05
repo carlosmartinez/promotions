@@ -1,5 +1,4 @@
 class Item
-  attr_accessor :name
   attr_accessor :code
   attr_accessor :price
 
