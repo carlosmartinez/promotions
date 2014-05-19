@@ -1,13 +1,53 @@
-NotOnTheHighStreet code test: promotions engine
+Code test: promotions engine
 =========
 
-- Requires Ruby 1.9+
-- run: bundle 
-- run: rake spec
-- run: rake cucumber
+A relatively involved code test I completed in 2013 for an e-commerce company. 
 
-Requirements seemed to imply a simple rules engine model, so that's what I ran with. Basically I allowed the unit tests to drive the design. 
+## How to run
 
-I TDDed with the Rspec tests, and wrote the Cucumber tests retroactively on the basis that 1) they are a nice way to show the requirements; 2) you probably want to know that I can do Cucumber :-)
+    bundle 
+    rake spec
+    rake cucumber
 
-Thanks for your time. 
+## Instructions for the test
+
+Here is a sample of some of the products available on our site: 
+ 
+Product code | Name | Price 
+---------------------------------------------------------- 
+001 | Travel Card Holder | £9.25 
+002 | Personalised cufflinks | £45.00 
+003 | Kids T-shirt | £19.95 
+ 
+Our marketing team want to offer promotions as an incentive 
+for our customers to purchase these items. 
+ 
+If you spend over £60, then you get 10% off your purchase 
+If you buy 2 or more travel card holders then the price 
+drops to £8.50. 
+ 
+Our check-out can scan items in any order, and because our 
+promotions will change, it needs to be flexible regarding 
+our promotional rules. 
+ 
+The interface to our checkout looks like this (shown in 
+Ruby): 
+ 
+    co = Checkout.new(promotional_rules) 
+    co.scan(item) 
+    co.scan(item) 
+    price = co.total 
+ 
+Implement a checkout system that fulfills these 
+requirements. 
+ 
+### Test data 
+
+Basket: 001,002,003 
+Total price expected: £66.78 
+ 
+Basket: 001,003,001 
+Total price expected: £36.95 
+ 
+Basket: 001,002,001,003 
+Total price expected: £73.76 
