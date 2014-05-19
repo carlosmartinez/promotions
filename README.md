@@ -13,12 +13,33 @@ A relatively involved code test I completed in 2013 for an e-commerce company.
 
 Here is a sample of some of the products available on our site: 
  
-Product code | Name | Price 
----------------------------------------------------------- 
-001 | Travel Card Holder | £9.25 
-002 | Personalised cufflinks | £45.00 
-003 | Kids T-shirt | £19.95 
- 
+<table>
+  <thead>
+    <th>
+      <td>Product code</td>
+      <td>Name</td>
+      <td>Price</td>
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>001</td>
+      <td>Travel Card Holder</td>
+      <td>£9.25</td>
+    </tr>
+    <tr>
+      <td>002</td>
+      <td>Personalised cufflinks</td>
+      <td>£45.00</td>
+    </tr>
+    <tr>
+      <td>003</td>
+      <td>Kids T-shirt</td>
+      <td>£19.95</td>
+    </tr>
+  </tbody>
+</table>
+
 Our marketing team want to offer promotions as an incentive 
 for our customers to purchase these items. 
  
