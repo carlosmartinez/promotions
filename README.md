@@ -15,11 +15,11 @@ Here is a sample of some of the products available on our site:
  
 <table>
   <thead>
-    <th>
-      <td>Product code</td>
-      <td>Name</td>
-      <td>Price</td>
-    </th>
+    <tr>
+      <th>Product code</th>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
